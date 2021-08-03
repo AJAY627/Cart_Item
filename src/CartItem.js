@@ -12,7 +12,19 @@ class Cartitem extends React.Component {
       //  this.increaseQuantuty = this.increaseQuantuty.bind(this); //bind of this
     }
     increaseQuantuty =()=> {
-        console.log('this', this.state);
+       // console.log('this', this.state);
+       // setState form 1
+    //    this.setState ({
+    //        qty: this.state.qty + 1
+    //     });
+    //setState form 2
+
+    this.setState ((prevState) => {
+        return{
+            qty: prevState.qty + 1
+        }
+    });
+       
     }
     render() {
         const { price, title, qty } = this.state;
