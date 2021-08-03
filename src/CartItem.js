@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Cartitem extends React.Component {
+const CartItem = (props) => {
    
     // testing() {
     //     const promise = new Promise((resolve, reject) => {
@@ -51,13 +51,12 @@ class Cartitem extends React.Component {
     // }
 
 
-    render() {
-        const { price, title, qty } = this.props.product;
-        const { product, onDecreaseQuantity, onIncreaseQuantity, onDeleteProduct } = this.props;
+    const { price, title, qty } = props.product;
+        const { product, onDecreaseQuantity, onIncreaseQuantity, onDeleteProduct } = props;
         return (
             <div className="cart-item">
                 <div className="left-block">
-                    <img style = {style.image}/>
+                    <img style = {style.image} src={product.img}/>
                 </div>
                 <div className="right-block">
                     <div style = {{fountSize : 25}}>{title}</div>
@@ -91,7 +90,6 @@ class Cartitem extends React.Component {
 
             </div>
         )
-    }
 }
 const style = {
     image: {
@@ -102,4 +100,4 @@ const style = {
     }
   }
 
-export default Cartitem;
+export default CartItem;
