@@ -19,7 +19,7 @@ class Cartitem extends React.Component {
     //         console.log('state' , this.state);
     //     })
     // }
-    increaseQuantuty =()=> {
+    // increaseQuantuty =()=> {
        // console.log('this', this.state);
        // setState form 1
     //    this.setState ({
@@ -29,26 +29,27 @@ class Cartitem extends React.Component {
    //      });
     //setState form 2
 
-    this.setState ((prevState) => {
-        return{
-            qty: prevState.qty + 1
-        }
-    });
-    }
-    decreaseQuantity = () => {
-        const {qty} = this.state;
-        if(qty === 0){
-            return;
-        }
+    // this.setState ((prevState) => {
+    //     return{
+    //         qty: prevState.qty + 1
+    //     }
+    // });
+    // }
+    // decreaseQuantity = () => {
+    //     const {qty} = this.state;
+    //     if(qty === 0){
+    //         return;
+    //     }
 
-        console.log('this', this.state);
+    //     console.log('this', this.state);
         
-        this.setState ((prevState) => {
-            return{
-            qty: prevState.qty - 1
-        }
-        });
-    }
+    //     this.setState ((prevState) => {
+    //         return{
+    //         qty: prevState.qty - 1
+    //     }
+    //     });
+    // }
+
 
     render() {
         const { price, title, qty } = this.props.product;
@@ -67,7 +68,7 @@ class Cartitem extends React.Component {
                         alt ="increase" 
                         className="action-icons" 
                         src="https://image.flaticon.com/icons/png/512/992/992651.png"
-                         onClick={this.increaseQuantuty}
+                         onClick={()=> this.props.onIncreaseQuantity(this.props.product)}
                         >
 
                         </img>
