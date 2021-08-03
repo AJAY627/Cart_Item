@@ -10,13 +10,33 @@ class Cartitem extends React.Component {
             img:''
         }
       //  this.increaseQuantuty = this.increaseQuantuty.bind(this); //bind of this
+      //this.testing();
     }
+    // testing() {
+    //     const promise = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve('done');
+    //         }, 5000);
+    //     })
+    //     promise.then(() =>{
+    //         //setState acts like a synchronus call
+    //         this.setState({qty: this.state.qty + 10});
+
+    //         this.setState({qty: this.state.qty + 10});
+
+    //         this.setState({qty: this.state.qty + 10});
+
+    //         console.log('state' , this.state);
+    //     })
+    // }
     increaseQuantuty =()=> {
        // console.log('this', this.state);
        // setState form 1
     //    this.setState ({
     //        qty: this.state.qty + 1
-    //     });
+    //     }, () => { -----------React give use a call back function bec this is a ascy
+     // console.log('this', this.state);
+   //      });
     //setState form 2
 
     this.setState ((prevState) => {
@@ -24,8 +44,22 @@ class Cartitem extends React.Component {
             qty: prevState.qty + 1
         }
     });
-       
     }
+    decreaseQuantity = () => {
+        const {qty} = this.state;
+        if(qty === 0){
+            return;
+        }
+
+        console.log('this', this.state);
+        
+        this.setState ((prevState) => {
+            return{
+            qty: prevState.qty - 1
+        }
+        });
+    }
+
     render() {
         const { price, title, qty } = this.state;
         return (
@@ -50,7 +84,9 @@ class Cartitem extends React.Component {
                         <img 
                         alt ="decrease" 
                         className="action-icons" 
-                        src="https://image.flaticon.com/icons/png/512/104/104616.png">
+                        src="https://image.flaticon.com/icons/png/512/104/104616.png"
+                         onClick={this.decreaseQuantity}
+                        >
                         </img>
                         <img alt ="delete" 
                         className="action-icons" 
