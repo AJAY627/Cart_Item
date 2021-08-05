@@ -1,28 +1,23 @@
-import React from "react";
-import Cartitem from "./CartItem";
+import React from 'react';
+import CartItem from './CartItem';
 
-
-const Cart =(props)=> {
-  
-   
-        const { products } = props;
+const Cart = (props) => {
+  const { products } = props;
+  return (
+    <div className="cart">
+      {products.map((product) => {
         return (
-        <div className="cart">         
-         {products.map((product) => {
-            return (
-                 <Cartitem 
-                 product = {product} 
-                 key={product.id}
-                 onIncreaseQuantity={props.onIncreaseQuantity}
-                 onDecreaseQuantity={props.onDecreaseQuantity}
-                 onDeleteProduct = {props. onDeleteProduct}
-                />
-            )
-         })}
-
-        </div>
-        );
-    
+          <CartItem
+            product={product}
+            key={product.id}
+            onIncreaseQuantity={props.onIncreaseQuantity}
+            onDecreaseQuantity={props.onDecreaseQuantity}
+            onDeleteProduct={props.onDeleteProduct}
+          />
+        )
+      })}
+    </div>
+  );
 }
 
-export default Cart; 
+export default Cart;

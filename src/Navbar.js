@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Navbar = (props) => {
-  return (
+    return (
     <div style={styles.nav}>
       <div style={styles.cartIconContainer}>
         <img style={styles.cartIcon} src="https://image.flaticon.com/icons/svg/2121/2121815.svg" alt="cart-icon" />
@@ -10,6 +10,7 @@ const Navbar = (props) => {
     </div>
   );
 }
+
 
 const styles = {
   cartIcon: {
@@ -36,5 +37,5 @@ const styles = {
   }
 };
 
+export default Navbar
 
-export default Navbar;
